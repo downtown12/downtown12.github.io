@@ -153,32 +153,32 @@ h6 {
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 24px;
 	font-size: 2rem;
 }
 
 h2 {
-	font-size: 24px;
+	font-size: 20px;
 	font-size: 1.5rem;
 }
 
 h3 {
-	font-size: 20px;
+	font-size: 18px;
 	font-size: 1.25rem;
 }
 
 h4 {
-	font-size: 18px;
+	font-size: 16px;
 	font-size: 1.125rem;
 }
 
 h5 {
-	font-size: 16px;
+	font-size: 12px;
 	font-size: 1rem;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 12px;
 	font-size: 1rem;
 }
 
@@ -221,7 +221,7 @@ ul {
 }
 
 small {
-	font-size: 12px;
+	font-size: 11px;
 	font-size: .75rem;
 }
 
@@ -649,7 +649,7 @@ select {
 .tags {
 	margin-bottom: 20px;
 	margin-bottom: 1.25rem;
-	font-size: 12px;
+	font-size: 11px;
 	font-size: .75rem;
 	line-height: 1;
 	color: #fff;
@@ -911,7 +911,7 @@ th {
 /* Forms */
 input {
 	padding: 5px;
-	font-size: 12px;
+	font-size: 11px;
 	vertical-align: middle;
 	background: #f5f5f5;
 	border: 1px solid #ebebeb;
@@ -976,7 +976,7 @@ textarea {
 .widget__title {
 	position: relative;
 	padding-bottom: 5px;
-	font-size: 16px;
+	font-size: 12px;
 	font-size: 1rem;
 	text-transform: uppercase;
 	border-bottom: 3px solid #e64946;
@@ -1043,14 +1043,14 @@ textarea {
 .widget-taglist__link {
 	display: inline-block;
 	margin: 0 4px 8px 0;
-	font-size: 12px;
+	font-size: 11px;
 	text-transform: uppercase;
 }
 
 /* Footer */
 .footer {
 	padding: 10px 25px;
-	font-size: 12px;
+	font-size: 11px;
 	font-size: .75rem;
 	color: #999;
 	background: #2a2a2a;

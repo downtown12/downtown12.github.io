@@ -47,14 +47,16 @@
 </span></div>
 		</header>
 		<div class="list__excerpt post__content">
-			python 2神坑之字符编码 &ndash; HTTP POST文件场景
-先来说一下Python 2 的编码坑 我们在写python代码时经常会遇到下边这两种报错：UnicodeDecodeError 和 UnicodeEncodeError：
+			Python 2神坑之字符编码 先来说一下Python 2 的编码坑 我们在写python代码时经常会遇到下边这两种报错：UnicodeDecodeError 和 UnicodeEncodeError：
 UnicodeDecodeError: &lsquo;ascii&rsquo; codec can&rsquo;t decode byte 0x87 in position 0: ordinal not in range(128)
 UnicodeEncodeError: &lsquo;ascii&rsquo; codec can&rsquo;t encode character u&rsquo;\u5728&rsquo; in position 1
 这两种报错（异常）的产生都是因为Python 2 中的编码坑：
 Python 2中有两种类型的字符串，str和unicode。
 当执行一些操作，例如字符串合并（str1 += str2）、join函数（&quot;&quot;.join([str1, str2])）时，如果操作的参数str1和str2一种是str型，而另一种是unicode型的话，Python 2 就会把操作的结果进行类型转化（通常是将结果统一成unicode类型）。而这个编码转化是Python自动帮你做的。举个例子：
-In [6]: str1 = &quot;fgetdapain&quot; In [7]: str2 = u&quot;is a nickname&quot; In [8]: str1 + str2 Out[8]: u'fgetdapainis a nickname' In [9]: &quot;&quot;.
+In [6]: str1 = &quot;fgetdapain&quot; In [7]: str2 = u&quot;is a nickname&quot; In [8]: str1 + str2 Out[8]: u'fgetdapainis a nickname' In [9]: &quot;&quot;.join([str1, str2]) Out[9]: u'fgetdapainis a nickname'  可以看到，str1是一个str型字符串，而str2是一个unicode型的字符串，在+和join两个操作后，操作的结果都变成了unicode类型。
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/encoding-problem-in-python-2/">Read more…</a>
 		</div>
 	</div>
 </article><article class="list__item post">
