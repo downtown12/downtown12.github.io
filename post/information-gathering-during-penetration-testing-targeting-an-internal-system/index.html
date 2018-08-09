@@ -4,14 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>安全管理</title>
+	<title>随笔: 一次渗透演习过程中的信息收集工作</title>
 	<meta name="description" content="">
 	<meta name="generator" content="Hugo 0.40.2" />
 	
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss" href="/tags/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/index.xml">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	<script type="text/javascript" src="/js/scripts.js"></script>
@@ -33,32 +32,126 @@
 		</header>
 		<div class="wrapper flex">
 
-	<main class="main list content" role="main">
-		<header class="page-header">
-			<h1 class="page-header__title">安全管理</h1>
-		</header><article class="list__item post">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/management-of-vulnerability-lifetime-in-a-bank/" rel="bookmark">银行业的漏洞生命周期管理流程</a>
-			</h3><div class="list__meta meta">
+<main class="main content">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">随笔: 一次渗透演习过程中的信息收集工作</h1><div class="post__meta meta">
 <svg class="icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-<time class="post__meta-date meta-date" datetime="2018-05-10T21:20:34">May 10, 2018</time>
+<time class="post__meta-date meta-date" datetime="2018-07-29T17:46:27">July 29, 2018</time>
 <span class="post__meta-categories meta-categories">
 	<svg class="icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta-categories__list"><a class="meta-categories__link" href="/categories/%e6%8a%80%e6%9c%af" rel="category">技术</a></span>
+	<span class="meta-categories__list"><a class="meta-categories__link" href="/categories/%e5%ae%89%e5%85%a8" rel="category">安全</a></span>
 </span></div>
 		</header>
-		<div class="list__excerpt post__content">
-			在甲方单位从事了将近两年的漏洞生命周期管理工作，所在的银行没有SRC(应急响应中心)，每个季度会有一次测试项目，测试项目是外包给了测试厂商来做，测试厂商测试完后，将每个系统的漏洞报告，打成一个包，发给我。此时，我的工作就开始了，我要将漏洞通知给负责各系统开发的项目经理，帮助和指导他们修复漏洞。漏洞是以工单的形式通知给开发项目经理的。我们的工单系统其实就类似一个SRC,但是远没有SRC那么好用。
-现在将我的漏洞生命周期管理工作总结如下，用红色字体标注了此管理流程中常见的一些难点。作为我这两年从事这项工作的一些总结。
-为了这个项目，我还开发了一个自动批量派发工单给开发负责人的脚本，来提高漏洞处置效率。我给它起名为xxxxx-worksheet-robot(xxxxx是我们工单系统的名称，这里隐去)
-		</div>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#演习目标">演习目标</a></li>
+<li><a href="#整体思路">整体思路</a></li>
+<li><a href="#渗透思路">渗透思路</a></li>
+<li><a href="#收获与反思">收获与反思：</a></li>
+</ul></li>
+</ul>
+</nav>
 	</div>
-</article>
+</div>
+<div class="post__content clearfix">
+			
 
+<p>最近参加了一个政府机构组织的网络安全演习工作，演习的目的是通过在可控环境（在该机构提供的可控环境下实施渗透）中，尝试获取一些国内重要行业的信息系统的权限，以评价此系统及系统所在网络的安全性。以达到网络安全演习的目的。</p>
+
+<p>因此，我的工作就是针对目标网络做渗透。通过各种手段，尝试进入目标网络的内网，取得权限。简单说就是在互联网上搜集目标网络这在安全方面“短板”，尤其是搜集一些安全基线配置不到位的地方，例如：弱口令、开放到互联网的敏感端口等。</p>
+
+<p>在这次演习过程中，我在信息收集方面收获了不少经验，在这里记录、分享一下。</p>
+
+<h2 id="演习目标">演习目标</h2>
+
+<p>通过目标系统在互联网上开放的服务，一步一步从互联网入口、进入内网、甚至进一步进入内网生产网，拿下生产网核心系统的权限。</p>
+
+<h2 id="整体思路">整体思路</h2>
+
+<p>通过和身边经验丰富的大佬交流，再结合自己的实践。总结出一套在外部，对目标网络的内网进行渗透的信息收集经验。也就是说我们的渗透目标，是拿下某公司内部局域网办公网or生产网系统的某些权限。</p>
+
+<h2 id="渗透思路">渗透思路</h2>
+
+<p>寻找水桶上最短的那块木板：</p>
+
+<ol>
+<li>扫描子域名 （获取搜索引擎上的一些已知子域名和对应IP）
+借助工具：subDomainsBrute by lijiejie, SubdomainCollector by 小米范
+子域名收集的原理：利用子域名字典探测二级或者三级域名，在通过dns解析得知此域名是否存在。
+例如：很多网站喜欢将邮件系统的web服务的域名命名为mail.xx.com, 例如：mail.163.com, mail.qq.com。于是就可以将&rdquo;mail&rdquo;加入到子域名字典中。字典中类似的词语还可以是dns, smtp, test等等。</li>
+<li>判断网络IP的真实位置。通过DNS得到的IP地址可能有以下几种情况：目标系统数据中心外网真实IP、CDN网段或者内网IP。</li>
+
+<li><p>绕过CDN得到真实的IP地址。方式汇总：</p>
+
+<p>a. 借助一些支持多地点ping操作的工具网站。如：</p>
+
+<ul>
+<li><a href="http://ping.chinaz.com">http://ping.chinaz.com</a></li>
+<li><a href="https://ping.aizhan.com/">https://ping.aizhan.com/</a></li>
+</ul>
+
+<p>一些站点支持多地理位置ping,可在这些网站上对目标域名执行ping操作，如果不同的地理位置返回的是同一个IP，则找到了。</p></li>
+
+<li><p>扫描真实IP对应的C段，发现目标所开放的服务端口</p></li>
+
+<li><p>根据扫到的端口，根据常用端口和对应的服务，做进一步的探测：</p>
+
+<ul>
+<li><strong>80、443端口（web服务）</strong>：直接浏览器访问了解情况、用whatweb探测设备指纹，了解网站的开发框架。同时，可排除一些无效站点，例如：服务器无响应、返回404或空内容。根据网站情况，进行进一步的渗透。</li>
+<li><strong>8080、8000、8888, etc</strong>：这些端口通常也可能会开放一些web服务，可通过上边的方法做一些测试或尝试。</li>
+<li><strong>21端口（ftp）</strong>：用F-Scrack或hydra工具探测弱口令。根据之前的实践经验，探测出弱口令的机会不大。</li>
+<li><strong>22端口（ssh）</strong>：用hydra或fenghuang-scan工具探测弱口令。根据之前实践经验，探测出弱口令的机会不大。</li>
+<li><strong>7001、7002端口（疑似weblogic）</strong>：尝试一些weblogic反序列化漏洞的检测，依赖公开PoC。如果检测出现漏洞，可直接获取服务器权限。</li>
+<li><strong>3389（远程桌面or rdp协议）</strong>：用windows上的mstsc.exe做一下探测，证明目标确实开放了远程桌面。进而可以使用hydra工具扫一下弱口令。</li>
+<li><strong>3306（mysql）</strong>：可以试一下弱口令扫描。工具的话，没错还是hydra。</li>
+<li>&hellip;&hellip;
+<br /></li>
+</ul></li>
+</ol>
+
+<h2 id="收获与反思">收获与反思：</h2>
+
+<ol>
+<li>平时要注重对渗透技巧的训练和对渗透经验的积累。</li>
+<li>要提早编写几个趁手的工具，在实际工作中可以直接拿来使用。</li>
+</ol>
+
+		</div>
 		
-	</main>
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16"><path d="M16 9.5c0 .373-.24.74-.5 1l-5 5c-.275.26-.634.5-1 .5-.373 0-.74-.24-1-.5L1 8a2.853 2.853 0 0 1-.7-1C.113 6.55 0 5.973 0 5.6V1.4C0 1.034.134.669.401.401.67.134 1.034 0 1.4 0h4.2c.373 0 .95.113 1.4.3.45.187.732.432 1 .7l7.5 7.502c.26.274.5.632.5.998zM3.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a></li>
+	</ul>
+</div>
+	</article>
+	
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About FgetDaPain</span>
+	</div>
+	<div class="authorbox__description">
+		A Pythoner, Penetration Tester. 一个热爱学习的人.
+	</div>
+</div>
+	
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/management-of-vulnerability-lifetime-in-a-bank/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">银行业的漏洞生命周期管理流程</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/encoding-problem-in-python-2/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Encoding Problem in Python 2</p></a>
+	</div>
+</nav>
+	
+</main>
 
 
 <aside class="sidebar">

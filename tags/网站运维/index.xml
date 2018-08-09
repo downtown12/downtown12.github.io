@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>网站运维 on FgetDaPain</title>
-    <link>https://fgetdapain.github.io/tags/%E7%BD%91%E7%AB%99%E8%BF%90%E7%BB%B4/</link>
+    <link>/tags/%E7%BD%91%E7%AB%99%E8%BF%90%E7%BB%B4/</link>
     <description>Recent content in 网站运维 on FgetDaPain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 05 May 2018 11:40:56 +0800</lastBuildDate>
     
-	<atom:link href="https://fgetdapain.github.io/tags/%E7%BD%91%E7%AB%99%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E7%BD%91%E7%AB%99%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>我是如何用Hugo搭建这个个人博客的</title>
-      <link>https://fgetdapain.github.io/post/how-to-build-this-personal-blog-using-hugo/</link>
+      <link>/post/how-to-build-this-personal-blog-using-hugo/</link>
       <pubDate>Sat, 05 May 2018 11:40:56 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/how-to-build-this-personal-blog-using-hugo/</guid>
+      <guid>/post/how-to-build-this-personal-blog-using-hugo/</guid>
       <description>参考链接：  使用hugo搭建个人博客站点; Hugo Mainroad 主题; Hugo Docs;  Hugo是啥  Hugo是一个用Go语言编写的静态网站生成器 Hugo很适合用来搭建个人博客，且它的官方网站上有很多的博客主题，可以下载直接使用
  静态网站生成器 这里直接摘抄CoderZh大牛对于静态网站生成器的说明：
  什么是静态网站生成器？如果追溯到最早的网站形式，那时候的网页都是静态的，即一个内容不变的html文件放在服务器上，人们通过互联网访问浏览的都是这个一成不变的页面。后来，人们发现，需要和网页进行交互，能根据用户的输入动态呈现出相应的内容，这就是动态网站。那，为什么现在又回归使用静态网站呢？特别是对于博客网站这种特殊的形式。我的理解是：

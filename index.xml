@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FgetDaPain</title>
-    <link>https://fgetdapain.github.io/</link>
+    <link>/</link>
     <description>Recent content on FgetDaPain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 06 Aug 2018 23:15:46 +0800</lastBuildDate>
     
-	<atom:link href="https://fgetdapain.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Encoding Problem in Python 2</title>
-      <link>https://fgetdapain.github.io/post/encoding-problem-in-python-2/</link>
+      <link>/post/encoding-problem-in-python-2/</link>
       <pubDate>Mon, 06 Aug 2018 23:15:46 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/encoding-problem-in-python-2/</guid>
+      <guid>/post/encoding-problem-in-python-2/</guid>
       <description>python 2神坑之字符编码 &amp;ndash; HTTP POST文件场景
 先来说一下Python 2 的编码坑 我们在写python代码时经常会遇到下边这两种报错：UnicodeDecodeError 和 UnicodeEncodeError：
 UnicodeDecodeError: &amp;lsquo;ascii&amp;rsquo; codec can&amp;rsquo;t decode byte 0x87 in position 0: ordinal not in range(128)
@@ -29,10 +29,10 @@ In [6]: str1 = &amp;quot;fgetdapain&amp;quot; In [7]: str2 = u&amp;quot;is a nic
     
     <item>
       <title>随笔: 一次渗透演习过程中的信息收集工作</title>
-      <link>https://fgetdapain.github.io/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</link>
+      <link>/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</link>
       <pubDate>Sun, 29 Jul 2018 17:46:27 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</guid>
+      <guid>/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</guid>
       <description> 最近参加了一个政府机构组织的网络安全演习工作，演习的目的是通过在可控环境（在该机构提供的可控环境下实施渗透）中，尝试获取一些国内重要行业的信息系统的权限，以评价此系统及系统所在网络的安全性。以达到网络安全演习的目的。
 因此，我的工作就是针对目标网络做渗透。通过各种手段，尝试进入目标网络的内网，取得权限。简单说就是在互联网上搜集目标网络这在安全方面“短板”，尤其是搜集一些安全基线配置不到位的地方，例如：弱口令、开放到互联网的敏感端口等。
 在这次演习过程中，我在信息收集方面收获了不少经验，在这里记录、分享一下。
@@ -49,10 +49,10 @@ a. 借助一些支持多地点ping操作的工具网站。如：
     
     <item>
       <title>银行业的漏洞生命周期管理流程</title>
-      <link>https://fgetdapain.github.io/post/management-of-vulnerability-lifetime-in-a-bank/</link>
+      <link>/post/management-of-vulnerability-lifetime-in-a-bank/</link>
       <pubDate>Thu, 10 May 2018 21:20:34 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/management-of-vulnerability-lifetime-in-a-bank/</guid>
+      <guid>/post/management-of-vulnerability-lifetime-in-a-bank/</guid>
       <description>在甲方单位从事了将近两年的漏洞生命周期管理工作，所在的银行没有SRC(应急响应中心)，每个季度会有一次测试项目，测试项目是外包给了测试厂商来做，测试厂商测试完后，将每个系统的漏洞报告，打成一个包，发给我。此时，我的工作就开始了，我要将漏洞通知给负责各系统开发的项目经理，帮助和指导他们修复漏洞。漏洞是以工单的形式通知给开发项目经理的。我们的工单系统其实就类似一个SRC,但是远没有SRC那么好用。
 现在将我的漏洞生命周期管理工作总结如下，用红色字体标注了此管理流程中常见的一些难点。作为我这两年从事这项工作的一些总结。
 为了这个项目，我还开发了一个自动批量派发工单给开发负责人的脚本，来提高漏洞处置效率。我给它起名为xxxxx-worksheet-robot(xxxxx是我们工单系统的名称，这里隐去)</description>
@@ -60,10 +60,10 @@ a. 借助一些支持多地点ping操作的工具网站。如：
     
     <item>
       <title>初探：Python Celery任务调度模块和消息队列</title>
-      <link>https://fgetdapain.github.io/post/first-exploration-of-celery-and-message-queue/</link>
+      <link>/post/first-exploration-of-celery-and-message-queue/</link>
       <pubDate>Thu, 10 May 2018 20:14:36 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/first-exploration-of-celery-and-message-queue/</guid>
+      <guid>/post/first-exploration-of-celery-and-message-queue/</guid>
       <description>近期由于工作需要，要开发一套类似扫描器的工具，并将它的扫描工作作为服务提供给多个用户使用。每个用户可以下发扫描任务，最终查看扫描结果。为了实现调度多个用户下发的扫描任务。我想到需要写一个同步或异步的任务调度模块，并要将用户下发的任务放进队列里，依次（同步）或并发（异步）处理。同时，队列里的任务要存放在缓存（或本地磁盘）中，以免任务信息丢失。 &amp;gt;为了实现这几个功能，上网查了些资料，发现消息队列技术刚好可以完成这项工作。因此也就不需要自己研发这个模块了。刚好前不久也被lijiejie大牛问到了类似的问题。之前没有接触过。正好学了一下，发现使用现成的任务调度模块（Celery）以及消息队列（RabbitMQ或Redis）来实现文章一开始所说的任务调度功能，其实很简单。
 参考连接  任务调度利器：Celery (廖雪峰) 利用 Celery 构建 Web 服务的后台任务调度模块(ibm-developworks)  Celery是什么  Celery是Python开发的分布式任务调度模块，接口简单，开发容易 Celery本身不含消息服务，它使用第三方消息服务来传递任务，目前，Celery支持的消息服务有RabbitMQ、Redis甚至是数据库。
  对与我目前需求比较简单的情况，当然Redis应该是最佳选择。后续随着需求复杂，可以考虑使用RabbitMQ（分布式集群的消息队列）
@@ -76,10 +76,10 @@ RabbitMQ属重量级消息队列，支持持久化任务。</description>
     
     <item>
       <title>我是如何用Hugo搭建这个个人博客的</title>
-      <link>https://fgetdapain.github.io/post/how-to-build-this-personal-blog-using-hugo/</link>
+      <link>/post/how-to-build-this-personal-blog-using-hugo/</link>
       <pubDate>Sat, 05 May 2018 11:40:56 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/how-to-build-this-personal-blog-using-hugo/</guid>
+      <guid>/post/how-to-build-this-personal-blog-using-hugo/</guid>
       <description>参考链接：  使用hugo搭建个人博客站点; Hugo Mainroad 主题; Hugo Docs;  Hugo是啥  Hugo是一个用Go语言编写的静态网站生成器 Hugo很适合用来搭建个人博客，且它的官方网站上有很多的博客主题，可以下载直接使用
  静态网站生成器 这里直接摘抄CoderZh大牛对于静态网站生成器的说明：
  什么是静态网站生成器？如果追溯到最早的网站形式，那时候的网页都是静态的，即一个内容不变的html文件放在服务器上，人们通过互联网访问浏览的都是这个一成不变的页面。后来，人们发现，需要和网页进行交互，能根据用户的输入动态呈现出相应的内容，这就是动态网站。那，为什么现在又回归使用静态网站呢？特别是对于博客网站这种特殊的形式。我的理解是：

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>信息收集 on FgetDaPain</title>
-    <link>https://fgetdapain.github.io/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</link>
+    <link>/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</link>
     <description>Recent content in 信息收集 on FgetDaPain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 29 Jul 2018 17:46:27 +0800</lastBuildDate>
     
-	<atom:link href="https://fgetdapain.github.io/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>随笔: 一次渗透演习过程中的信息收集工作</title>
-      <link>https://fgetdapain.github.io/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</link>
+      <link>/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</link>
       <pubDate>Sun, 29 Jul 2018 17:46:27 +0800</pubDate>
       
-      <guid>https://fgetdapain.github.io/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</guid>
+      <guid>/post/information-gathering-during-penetration-testing-targeting-an-internal-system/</guid>
       <description> 最近参加了一个政府机构组织的网络安全演习工作，演习的目的是通过在可控环境（在该机构提供的可控环境下实施渗透）中，尝试获取一些国内重要行业的信息系统的权限，以评价此系统及系统所在网络的安全性。以达到网络安全演习的目的。
 因此，我的工作就是针对目标网络做渗透。通过各种手段，尝试进入目标网络的内网，取得权限。简单说就是在互联网上搜集目标网络这在安全方面“短板”，尤其是搜集一些安全基线配置不到位的地方，例如：弱口令、开放到互联网的敏感端口等。
 在这次演习过程中，我在信息收集方面收获了不少经验，在这里记录、分享一下。
