@@ -44,8 +44,8 @@ html {
 body {
 	margin: 0;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-size: .875rem;
+	font-size: 12px;
+	font-size: .75rem;
 	line-height: 1.6;
 	word-wrap: break-word;
 	background: #f7f7f7;
@@ -154,32 +154,32 @@ h6 {
 
 h1 {
 	font-size: 24px;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 h2 {
 	font-size: 20px;
-	font-size: 1.5rem;
+	font-size: 1.25;
 }
 
 h3 {
 	font-size: 18px;
-	font-size: 1.25rem;
+	font-size: 1.125;
 }
 
 h4 {
 	font-size: 16px;
-	font-size: 1.125rem;
+	font-size: 1rem;
 }
 
 h5 {
 	font-size: 12px;
-	font-size: 1rem;
+	font-size: 0.75rem;
 }
 
 h6 {
 	font-size: 12px;
-	font-size: 1rem;
+	font-size: 0.75rem;
 }
 
 a {
@@ -649,7 +649,7 @@ select {
 .tags {
 	margin-bottom: 20px;
 	margin-bottom: 1.25rem;
-	font-size: 11px;
+	font-size: 12px;
 	font-size: .75rem;
 	line-height: 1;
 	color: #fff;
@@ -977,7 +977,7 @@ textarea {
 	position: relative;
 	padding-bottom: 5px;
 	font-size: 12px;
-	font-size: 1rem;
+	font-size: .75rem;
 	text-transform: uppercase;
 	border-bottom: 3px solid #e64946;
 }
@@ -1050,7 +1050,7 @@ textarea {
 /* Footer */
 .footer {
 	padding: 10px 25px;
-	font-size: 11px;
+	font-size: 12px;
 	font-size: .75rem;
 	color: #999;
 	background: #2a2a2a;
