@@ -17,13 +17,7 @@
       <pubDate>Mon, 06 Aug 2018 23:15:46 +0800</pubDate>
       
       <guid>/post/encoding-problem-in-python-2/</guid>
-      <description>Python 2神坑之字符编码 先来说一下Python 2 的编码坑 我们在写python代码时经常会遇到下边这两种报错：UnicodeDecodeError 和 UnicodeEncodeError：
-UnicodeDecodeError: &amp;lsquo;ascii&amp;rsquo; codec can&amp;rsquo;t decode byte 0x87 in position 0: ordinal not in range(128)
-UnicodeEncodeError: &amp;lsquo;ascii&amp;rsquo; codec can&amp;rsquo;t encode character u&amp;rsquo;\u5728&amp;rsquo; in position 1
-这两种报错（异常）的产生都是因为Python 2 中的编码坑：
-Python 2中有两种类型的字符串，str和unicode。
-当执行一些操作，例如字符串合并（str1 += str2）、join函数（&amp;quot;&amp;quot;.join([str1, str2])）时，如果操作的参数str1和str2一种是str型，而另一种是unicode型的话，Python 2 就会把操作的结果进行类型转化（通常是将结果统一成unicode类型）。而这个编码转化是Python自动帮你做的。举个例子：
-In [6]: str1 = &amp;quot;fgetdapain&amp;quot; In [7]: str2 = u&amp;quot;is a nickname&amp;quot; In [8]: str1 + str2 Out[8]: u&#39;fgetdapainis a nickname&#39; In [9]: &amp;quot;&amp;quot;.join([str1, str2]) Out[9]: u&#39;fgetdapainis a nickname&#39;  可以看到，str1是一个str型字符串，而str2是一个unicode型的字符串，在+和join两个操作后，操作的结果都变成了unicode类型。</description>
+      <description>Python 2神坑之字符编码 先来说一下Python 2 的编码坑 我们在写python代码时经常会遇到下边这两种报错：UnicodeDecodeError 和</description>
     </item>
     
     <item>
@@ -32,14 +26,7 @@ In [6]: str1 = &amp;quot;fgetdapain&amp;quot; In [7]: str2 = u&amp;quot;is a nic
       <pubDate>Thu, 10 May 2018 20:14:36 +0800</pubDate>
       
       <guid>/post/first-exploration-of-celery-and-message-queue/</guid>
-      <description>近期由于工作需要，要开发一套类似扫描器的工具，并将它的扫描工作作为服务提供给多个用户使用。每个用户可以下发扫描任务，最终查看扫描结果。为了实现调度多个用户下发的扫描任务。我想到需要写一个同步或异步的任务调度模块，并要将用户下发的任务放进队列里，依次（同步）或并发（异步）处理。同时，队列里的任务要存放在缓存（或本地磁盘）中，以免任务信息丢失。 &amp;gt;为了实现这几个功能，上网查了些资料，发现消息队列技术刚好可以完成这项工作。因此也就不需要自己研发这个模块了。刚好前不久也被lijiejie大牛问到了类似的问题。之前没有接触过。正好学了一下，发现使用现成的任务调度模块（Celery）以及消息队列（RabbitMQ或Redis）来实现文章一开始所说的任务调度功能，其实很简单。
-参考连接  任务调度利器：Celery (廖雪峰) 利用 Celery 构建 Web 服务的后台任务调度模块(ibm-developworks)  Celery是什么  Celery是Python开发的分布式任务调度模块，接口简单，开发容易 Celery本身不含消息服务，它使用第三方消息服务来传递任务，目前，Celery支持的消息服务有RabbitMQ、Redis甚至是数据库。
- 对与我目前需求比较简单的情况，当然Redis应该是最佳选择。后续随着需求复杂，可以考虑使用RabbitMQ（分布式集群的消息队列）
-前边几段提到了RabbitMQ和Redis, 这两个东西在任务调度里的作用是什么呢？ 答案是，他们提供了消息队列服务。 简单来讲，它提供了任务存放的位置和存取方式。这样，在任务处理模块有空闲的时候，就从队列里取出一个任务来执行，执行完了（或中场休息）再取出另外一个。 消息队列在任务下发者（生产者）和任务处理者（消费者）之间提供了沟通的桥梁。
-消息队列的三个重要组件  Producer（客户端） Broker（中间人） Worker（职程）  消息队列的输入是工作的一个单元，称为任务，独立的职程（Worker）进程持续监视队列中是否有需要处理的新任务。 Celery 用消息通信，通常使用中间人（Broker）在客户端和职程间斡旋。这个过程从客户端向队列添加消息开始，之后中间人把消息派送给职程。
-Broker的选择：Redis还是RabbitMQ 简单描述如下：
-Redis属轻量级消息队列，支持功能不多，不支持持久化任务。
-RabbitMQ属重量级消息队列，支持持久化任务。</description>
+      <description>近期由于工作需要，要开发一套类似扫描器的工具，并将它的扫描工作作为服务提供给多个用户使用。每个用户可以下发扫描任务，最终查看扫描结果。为了实</description>
     </item>
     
   </channel>
